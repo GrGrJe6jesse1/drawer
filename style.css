@@ -1,0 +1,214 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.visually-hidden {
+  display: none;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+.global-header {
+  background-color: rgb(245, 197, 39);
+}
+.gnb-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+}
+.logo img {
+  width: 90px;
+}
+.gnb-icon-button {
+  margin-left: 15px;
+}
+.gnb-icon-button i {
+  font-size: 20px;
+  color: firebrick;
+}
+
+.gnb-item i {
+  font-size: 20px;
+}
+
+.gnb-list a {
+  margin-right: 15px;
+  transition: color 300ms ease-in-out;
+}
+.gnb-item a:hover {
+  color: forestgreen;
+}
+.lnb-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background-color: #fff;
+  padding: 10px;
+}
+.lnb-list {
+  display: flex;
+  padding: 8px 0;
+}
+.lnb-item {
+  padding: 0 10px;
+}
+
+.lnb-item:first-child {
+  margin-left: 20px;
+}
+
+.lnb-item a {
+  font-weight: bold;
+}
+.background {
+  background-image: url(./images/lego.png);
+  height: 700px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100vh;
+  background-color: #fff;
+  padding: 32px 20px;
+  transform: translate(-300px, 0);
+  z-index: 200;
+  transition: all 300ms ease-in-out;
+  overflow: scroll;
+  overscroll-behavior: none;
+}
+
+.sidebar.is-active {
+  transform: translate(0, 0);
+  transition: all 300ms ease-in-out; 
+}
+.sidebar-header {
+  padding: 0 12px;
+}
+.sidebar-user {
+  height: 80px;
+}
+
+.sidebar-user a {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #3f4150;
+  font-weight: 700;
+  width: 100%;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 8px;
+  flex-shrink: 0;
+  /* 기본값은 1 / shrink값을 0으로 바꾸면 컨테이너 크기많금 값을 유지 */
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-name {
+  overflow: hidden;
+  white-space: nowrap;
+  /* 기본값은 nomal / 공백과 줄바꿈을 어떻게 처리할건지 정의 */
+  text-overflow: ellipsis ;
+  /* 넘치는 텍스트를 어떻게 처리할건지 정의 */
+}
+.sidebar-menu {
+  border-bottom: 1px solid #e0e2e7;
+}
+.sidebar-menu.is-product.is-open .sidebar-menu-content {
+  max-height: 288px;
+  transition: all 200ms ease-in-out;
+}
+.sidebar-menu.is-brand.is-open .sidebar-menu-content {
+  max-height: 216px;
+  transition: all 200ms ease-in-out;
+}
+.sidebar-menu.is-info.is-open .sidebar-menu-content {
+  max-height: 180px;
+  transition: all 200ms ease-in-out;
+}
+
+.sidebar-menu-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 54px;
+  padding: 0 8px;
+  font-weight: bold;
+}
+.sidebar-menu.is-open .fa-chevron-down {
+  transform: translateY(-50%) rotate(180deg); 
+  transition: all 200ms ease-in-out;
+}
+.sidebar-menu-button i:first-child {
+  margin-right: 8px;
+  font-size: 20px;
+  color: #3f4150;
+}
+.sidebar-menu-button i:last-child {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  color: #3f4150;
+}
+.sidebar-menu-content {
+  max-height: 0;
+  overflow: hidden;
+}
+.sidebar-menu-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 36px;
+  padding: 0 12px;
+  font-weight: 700;
+  color: #3f4150;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 150;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(63, 65, 80, 0.5);
+  display: none;
+  transition: display 200ms ease-in-out;
+}
+.overlay.is-active {
+  display: block;
+}
+
+.empty-box {
+  height: 1500px;
+}
